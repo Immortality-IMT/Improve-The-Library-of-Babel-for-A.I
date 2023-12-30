@@ -6,8 +6,11 @@ These files generate the library sequentially into a database. They have two fun
 Improving the library of babel to find cures to aging.
 
 Compile with: 
+
 gcc -g -o anyname source_file.c -lsqlite3
+
 e.g.
+
 gcc -g -o babel dictionary.c -lsqlite3
 
 # Knighinggale Mason writes...
