@@ -19,7 +19,7 @@ If it hasn't been done then perhaps that should be looked into? I'm not sure who
 
 You know at Immortality, their is no place we will not tread in order finding cures. Is the library of babel hiding some valuable information? 
 
-# What is the Libray of Babel?
+# What is the Library of Babel?
 
 The libray of babel was first mentoned in a short story by Jorge Luis Borges: "The Library of Babel" in 1941 describes a vast and infinite library containing every possible combination of letters, resulting in every book that has ever has been or could ever be written, including complete gibberish.
 
@@ -33,7 +33,7 @@ Is the library of babel one of those interesting yet useless things or can we im
 
 "The Library of Babel" was then turned into a website (https://libraryofbabel.info/) that emulates the concept of Borges' library. It uses an algorithm to generate random "books" with 3200 characters each, containing all possible permutations of 29 characters (26 letters, space, comma, and period). This means the website contains approximately 10^4677 potential pages of books, even though most are nonsensical. The website allows users to browse the virtual library by entering coordinates like hexagon names, wall and shelf numbers, and book titles, a kind of Dewey Decimal Classification (DDC) system. 
 
-# Challenge: Improve the libaray of Babel.
+# Challenge: Improve the Library of Babel.
 
 OK. Challenge Accepted.
 
