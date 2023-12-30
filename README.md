@@ -1,4 +1,4 @@
-# Improve The Library of Babel for A.I.
+# Improve the Library of Babel for A.I.
 Improve Borges Library of Babel to take into account recent advances in A.I. that can possibly organise the data to finally be useful.
 
 These files generate the library sequentially into a database. They have two function one to omit data based on regular expressions and another to send the data to GPT to make decisions on the data.
