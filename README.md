@@ -13,6 +13,13 @@ e.g.
 
 gcc -g -o babel dictionary.c -lsqlite3
 
+Making a sequentially generated library of babel is as follows...
+
+1. Generate the dictionary of words.
+2. Generate the dictionary of single sentences.
+
+That's it, (forget full stops, commas and other punctuation, they can be added superficially as an end stage formatting purely for user presentation).
+
 # Knighinggale Mason writes...
 
 A thought on AI and the Library of Babel...
