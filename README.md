@@ -39,7 +39,7 @@ Yet only a small number of books contain valuable information obfuscated by the 
 
 Is the library of babel one of those interesting yet useless things, or can we improve it further and make it useful?
 
-"The Library of Babel" was then turned into a website (https://libraryofbabel.info/) that emulates the concept of Borges' library. It uses an algorithm to generate random "books" with 3200 characters each, containing all possible permutations of 29 characters (26 letters, space, comma, and period). This means the website contains approximately 10^4677 potential pages of books, even though most are nonsensical. The website allows users to browse the virtual library by entering coordinates like hexagon names, wall and shelf numbers, and book titles, a kind of Dewey Decimal Classification (DDC) system. 
+"The Library of Babel" was then turned into a website that emulates the concept of Borges' library. It uses an algorithm to generate random "books" with 3200 characters each, containing all possible permutations of 29 characters (26 letters, space, comma, and period). This means the website contains approximately 10^4677 potential pages of books, even though most are nonsensical. The website allows users to browse the virtual library by entering coordinates like hexagon names, wall and shelf numbers, and book titles, a kind of Dewey Decimal Classification (DDC) system. 
 
 # Challenge: Improve the Library of Babel.
 
