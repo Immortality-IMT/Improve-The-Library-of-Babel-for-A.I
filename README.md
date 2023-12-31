@@ -117,10 +117,8 @@ Facebook has an A.I. named prophet that predicts future trends trained on past t
 
 So guys, there it is, my attempt at improving the library of babel. Source code links are in the comments.
 
-/*
-    Find the correct almanac
-    Go to vegas, beat the casino
-    Don't forget your Uncle Tony, send bitcoin: bc1qtgn8z30pcu0xrx2zgvcg9y6htr537mu4nd6qx3
-*/
+Find the correct almanac.
+Go to vegas, beat the casino.
+Don't forget your Uncle Tony, send bitcoin: bc1qtgn8z30pcu0xrx2zgvcg9y6htr537mu4nd6qx3
 
 Tony over and out
