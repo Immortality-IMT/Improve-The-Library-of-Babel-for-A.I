@@ -2,6 +2,12 @@
     Find the correct almanac
     Go to vegas, beat the casino
     Don't forget your Uncle Tony, send bitcoin: bc1qtgn8z30pcu0xrx2zgvcg9y6htr537mu4nd6qx3
+
+    One only need to generate single sentences of ever increasing lengths using a dictionary. 
+    Punctuation is superficial, computers add it ad hoc just for the user presentation but never store it.
+
+    e=mc2 is 5 symbols and most academic journal papers are no more than 8,000 words.
+    The A.I. is tasked to determine truth without bias.
 */
 
 #include <stdio.h>
