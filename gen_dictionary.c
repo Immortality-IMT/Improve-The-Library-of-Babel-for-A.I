@@ -2,6 +2,9 @@
     Find the correct almanac
     Go to vegas, beat the casino
     Don't forget your Uncle Tony, send bitcoin: bc1qtgn8z30pcu0xrx2zgvcg9y6htr537mu4nd6qx3
+
+    Whatever is in the dictioanry is used in the generation of sentences.
+    You could add numbers, mathematical symbols, chemical notation... 
 */
 
 #include <stdio.h>
