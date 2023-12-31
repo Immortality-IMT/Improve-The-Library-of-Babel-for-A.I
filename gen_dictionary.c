@@ -5,6 +5,8 @@
 
     Whatever is in the dictioanry is used in the generation of sentences.
     You could add numbers, mathematical symbols, chemical notation... 
+
+    gcc -g -o babel_words gen_dictionary.c -lsqlite3
 */
 
 #include <stdio.h>
