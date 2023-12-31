@@ -8,6 +8,8 @@
 
     e=mc2 is 5 symbols and most academic journal papers are no more than 8,000 words.
     The A.I. is tasked to determine truth without bias.
+
+    gcc -g -o babel_sentences gen_sentence.c -lsqlite3
 */
 
 #include <stdio.h>
