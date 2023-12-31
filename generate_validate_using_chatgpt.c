@@ -2,6 +2,15 @@
     Find the correct almanac
     Go to vegas, beat the casino
     Don't forget your Uncle Tony, send bitcoin: bc1qtgn8z30pcu0xrx2zgvcg9y6htr537mu4nd6qx3
+    
+Prompt:
+    Do any of these list of words or letters have any meaning whatsoever, in any way, no matter how small or large, 
+    ax, ay, az...
+AI answer:
+    ax: In linguistics, an abbreviation for "alveolar plosive."
+    ay: Pronounced like "eye" in many languages.
+    az: Abbreviation for "Arizona" in the United States.
+Conclusion: the A.I. can build a dictionary of words and sentences and can also rate the sensicalness of data.
 */
 
 #include <stdio.h>
