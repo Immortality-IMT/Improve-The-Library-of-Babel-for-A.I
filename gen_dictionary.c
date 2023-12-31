@@ -1,3 +1,9 @@
+/*
+    Find the correct almanac
+    Go to vegas, beat the casino
+    Don't forget your Uncle Tony, send bitcoin: bc1qtgn8z30pcu0xrx2zgvcg9y6htr537mu4nd6qx3
+*/
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
