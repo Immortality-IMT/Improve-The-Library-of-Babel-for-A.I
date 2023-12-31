@@ -36,6 +36,8 @@ You know, at Immortality, there is no place we will not tread in order to find c
 
 # What is the Library of Babel?
 
+https://youtu.be/Uf0iP2DtvmE
+
 The library of babel was first mentioned in a short story by Jorge Luis Borges: "The Library of Babel" in 1941 describes a vast and infinite library containing every possible combination of letters, resulting in every book that has ever has been or could ever be written, including complete gibberish.
 
 By representing every possible combination of letters you get every word possible, by concatenating every combination of words you get every piece of information possible.
