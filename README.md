@@ -18,7 +18,7 @@ Making a sequentially generated library of babel is as follows...
 1. Generate the dictionary of words.
 2. Generate the dictionary of single sentences.
 
-That's it, (forget full stops, commas and other punctuation, they can be added superficially as an end stage formatting purely for user presentation).
+That's it, (forget full stops, commas and other punctuation, they can be added superficially as an end stage formatting purely for user presentation). General, academic research papers typically range from 3000 to 8000 words. Abstract being 300 words.
 
 # Knighinggale Mason writes...
 
