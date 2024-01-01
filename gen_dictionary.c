@@ -4,13 +4,19 @@
     Don't forget your Uncle Tony, send bitcoin: bc1qtgn8z30pcu0xrx2zgvcg9y6htr537mu4nd6qx3
 
     Whatever is in the dictioanry is used in the generation of sentences.
-    You could add numbers, mathematical symbols, chemical notation... 
+    The character set should be as small as possible. 
+    All information should be represented with the character set.
+    All notations are in words and theasaurus can eliminate words. 
+    At the user level, various parsors translate the output.
 
-    We would likely generate the smallest amount of words that equal universal representation of information,
-    and let parsers remodel the end result for the user. The longest word is 45 letters so likely a sequential
-    generaion of all possibilites of 26 (a..z) to the length of 45 letters (pneumonoultramicroscopicsilicovolcanoconiosis).
+    The longest word is 45 letters, a sequential generaion of all possibilites of 26 (a..z) 
+    to the length of 45 letters (pneumonoultramicroscopicsilicovolcanoconiosis).
 
     gcc -g -o babel_words gen_dictionary.c -lsqlite3
+
+    1. Press any key to exit the program.
+    2. Program resumes from the last generated word found in the database.
+    3. We only need to generate the set once, upload your database to be added.
 */
 
 #include <stdio.h>
@@ -22,11 +28,39 @@
 #define DATABASE_NAME "dictionary.db"
 #define CHARACTER_SET "abcdefghijklmnopqrstuvwxyz"
 
-void swap(char *a, char *b) {
-    char temp = *a;
-    *a = *b;
-    *b = temp;
+#ifdef _WIN32
+#include <conio.h>
+#else
+#include <termios.h>
+#include <unistd.h>
+#include <fcntl.h>
+
+// Safely exit to the program by pressing any key
+int _kbhit() {
+    struct termios oldt, newt;
+    int ch;
+    int oldf;
+
+    tcgetattr(STDIN_FILENO, &oldt);
+    newt = oldt;
+    newt.c_lflag &= ~(ICANON | ECHO);
+    tcsetattr(STDIN_FILENO, TCSANOW, &newt);
+    oldf = fcntl(STDIN_FILENO, F_GETFL, 0);
+    fcntl(STDIN_FILENO, F_SETFL, oldf | O_NONBLOCK);
+
+    ch = getchar();
+
+    tcsetattr(STDIN_FILENO, TCSANOW, &oldt);
+    fcntl(STDIN_FILENO, F_SETFL, oldf);
+
+    if(ch != EOF) {
+        ungetc(ch, stdin);
+        return 1;
+    }
+
+    return 0;
 }
+#endif
 
 bool isValidWord(const char *word) {
     // Implement custom validation logic here
@@ -35,64 +69,57 @@ bool isValidWord(const char *word) {
     return true; // Placeholder, replace with your logic
 }
 
-void generatePermutationsAndStoreHelper(sqlite3 *db, const char *characters, int length, int current, char *currentWord) {
-    if (current == length) {
-        // Check if the word is valid before storing it
-        if (isValidWord(currentWord)) {
-            printf("%s\n", currentWord); // Print the current word
-            // Store the generated word in the SQLite database
-            char *sql = malloc((strlen(currentWord) + 100) * sizeof(char));
-            if (sql == NULL) {
-                fprintf(stderr, "Memory allocation failed\n");
-                sqlite3_close(db);
-                exit(1);
-            }
+bool isValidWordWithAI(const char *word) {
+    //send the word to an A.I. to decide
+    //if word should be in character set 
 
-            snprintf(sql, strlen(currentWord) + 100, "INSERT INTO dictionary (word) VALUES ('%s');", currentWord);
+    return true; // Placeholder, replace with your logic
+}
 
-            if (sqlite3_exec(db, sql, 0, 0, 0) != SQLITE_OK) {
-                fprintf(stderr, "SQL error: %s\n", sqlite3_errmsg(db));
-            }
-
-            free(sql);
-        }
-
-        return;
+// Function to increment a string in the pattern described
+void incrementString(char *str) {
+    int i = strlen(str) - 1;
+    while (i >= 0 && str[i] == 'z') {
+        str[i] = 'a';
+        i--;
     }
-
-    for (int i = 0; i < strlen(characters); i++) {
-        currentWord[current] = characters[i];
-        generatePermutationsAndStoreHelper(db, characters, length, current + 1, currentWord);
+    if (i >= 0) {
+        str[i]++;
+    } else {
+        // If all characters are 'z', add a new 'a' at the beginning
+        memmove(str + 1, str, strlen(str) + 1);
+        str[0] = 'a';
     }
 }
 
-void generateLanguagePermutationsAndStore(sqlite3 *db, const char *characters, int length) {
-    char *currentWord = malloc((length + 1) * sizeof(char));
-    if (currentWord == NULL) {
-        fprintf(stderr, "Memory allocation failed\n");
-        sqlite3_close(db);
-        exit(1);
+// Function to insert a new record into the "dictionary" table
+void insertIntoDictionary(sqlite3 *db, const char *word) {
+    char sql[100];
+
+  if (isValidWord(word) && isValidWordWithAI(word)) { //perform validation
+
+    snprintf(sql, sizeof(sql), "INSERT INTO dictionary (word) VALUES ('%s');", word);
+
+    char *errMsg = 0;
+    if (sqlite3_exec(db, sql, 0, 0, &errMsg) != SQLITE_OK) {
+        fprintf(stderr, "SQL error: %s\n", errMsg);
+        sqlite3_free(errMsg);
     }
-
-    currentWord[length] = '\0';
-
-    generatePermutationsAndStoreHelper(db, characters, length, 0, currentWord);
-
-    free(currentWord);
+  }
 }
+
 
 int main() {
-
-    char characters[] = CHARACTER_SET;
-   
-    // Delete the existing SQLite database file
-    remove("dictionary.db");
-
-    // Open a new connection to the SQLite database
     sqlite3 *db;
-    if (sqlite3_open("dictionary.db", &db) != SQLITE_OK) {
+    int rc;
+
+    // Open the SQLite database
+    rc = sqlite3_open("dictionary.db", &db);
+
+    if (rc != SQLITE_OK) {
         fprintf(stderr, "Cannot open database: %s\n", sqlite3_errmsg(db));
-        return 1;
+        sqlite3_close(db);
+        return rc;
     }
 
     // Create a table if it doesn't exist
@@ -104,28 +131,44 @@ int main() {
         return 1;
     }
 
-    printf("Enter the maximum word length (up to 45): "); //longest word in English is Pneumonoultramicroscopicsilicovolcanoconiosis
-    int maxLength;
-    scanf("%d", &maxLength);
+    char initialWord[46];
 
-    char *currentWord = malloc((maxLength + 1) * sizeof(char));
-    if (currentWord == NULL) {
-        fprintf(stderr, "Memory allocation failed\n");
+    // Prepare SQL query to get the last record from the "dictionary" table
+    const char *sql = "SELECT word FROM dictionary ORDER BY id DESC LIMIT 1;";
+
+    sqlite3_stmt *stmt;
+    rc = sqlite3_prepare_v2(db, sql, -1, &stmt, NULL);
+
+    if (rc != SQLITE_OK) {
+        fprintf(stderr, "Cannot prepare statement: %s\n", sqlite3_errmsg(db));
         sqlite3_close(db);
-        return 1;
+        return rc;
     }
 
-    for (int length = 1; length <= maxLength; length++) {
-        currentWord[length] = '\0';
+    // Execute the query
+    rc = sqlite3_step(stmt);
 
-        printf("Permutations of words with length %d using '%s':\n", length, characters);
-        generateLanguagePermutationsAndStore(db, characters, length);
+    if (rc == SQLITE_ROW) {
+        // If there is a record, get the initial word from the result
+        strcpy(initialWord, (const char *)sqlite3_column_text(stmt, 0));
+        incrementString(initialWord); // stop the initial word from being added to the database again.
+    } else {
+        // If no record exists, set the initial word to 'a'
+        strcpy(initialWord, "a");
     }
 
-    // Close the SQLite database
+    // Finalize the statement
+    sqlite3_finalize(stmt);
+
+    // Infinite loop to generate and print the sequence
+    while (!_kbhit()) {
+        printf("%s, ", initialWord);
+        insertIntoDictionary(db, initialWord);
+        incrementString(initialWord);
+    }
+
+    // Close the database
     sqlite3_close(db);
-    free(currentWord);
 
     return 0;
 }
-
