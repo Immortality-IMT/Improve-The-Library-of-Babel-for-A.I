@@ -6,6 +6,10 @@
     Whatever is in the dictioanry is used in the generation of sentences.
     You could add numbers, mathematical symbols, chemical notation... 
 
+    We would likely generate the smallest amount of words that equal universal representation of information,
+    and let parsers remodel the end result for the user. The longest word is 45 letters so likely a sequential
+    generaion of all possibilites of 26 (a..z) to the length of 45 letters (pneumonoultramicroscopicsilicovolcanoconiosis).
+
     gcc -g -o babel_words gen_dictionary.c -lsqlite3
 */
 
