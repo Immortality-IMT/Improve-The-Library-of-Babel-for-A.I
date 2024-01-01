@@ -18,7 +18,7 @@ Making a sequentially generated library of babel is as follows...
 1. Generate the dictionary of words.
 2. Generate the dictionary of single sentences.
 
-That's it, (forget full stops, commas and other punctuation, they can be added superficially as an end stage formatting purely for user presentation). General, academic research papers typically range from 3000 to 8000 words. Abstract being 300 words.
+That's it, the character set must be kept to a minimum and parsers can represent data for the end user. The aim is information preservation and representation using only the minimal set of primitives. In general, academic research papers typically range from 3000 to 8000 words. Abstract being 300 words. Here the complete set of permutations are represented, being 45 letters in length using 26 characters of the alphabet. A complete set of sentences might be 8000 words long but resume feature means generate once and save the database. The project aim to generate the data and utilize AI. for processing.
 
 # Knighinggale Mason writes...
 
