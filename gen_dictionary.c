@@ -1,15 +1,15 @@
 /*
     Find the correct almanac
-    Go to vegas, beat the casino
+    Go to Vegas, beat the casino
     Don't forget your Uncle Tony, send bitcoin: bc1qtgn8z30pcu0xrx2zgvcg9y6htr537mu4nd6qx3
 
-    Whatever is in the dictioanry is used in the generation of sentences.
-    The character set should be as small as possible. 
-    All information should be represented with the character set.
-    All notations are in words and theasaurus can eliminate words. 
-    At the user level, various parsors translate the output.
+    Whatever is in the dictionary is used in the generation of sentences.
+    The character set should be as small as possible in theory.
+    Here we generate every permutation of 26 letters of 45 word length.
+    All notations are in words, "energy equals mass multiplied by the speed of light squared"
+    At the user level, various parsers translate the output, including punctuation.
 
-    The longest word is 45 letters, a sequential generation of all possibilites of 26 (a..z) 
+    The longest word is 45 letters, a sequential generation of all possibilities of 26 (a..z) 
     to the length of 45 letters (pneumonoultramicroscopicsilicovolcanoconiosis).
 
     gcc -g -o babel_words gen_dictionary.c -lsqlite3
