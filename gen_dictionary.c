@@ -9,7 +9,7 @@
     All notations are in words and theasaurus can eliminate words. 
     At the user level, various parsors translate the output.
 
-    The longest word is 45 letters, a sequential generaion of all possibilites of 26 (a..z) 
+    The longest word is 45 letters, a sequential generation of all possibilites of 26 (a..z) 
     to the length of 45 letters (pneumonoultramicroscopicsilicovolcanoconiosis).
 
     gcc -g -o babel_words gen_dictionary.c -lsqlite3
