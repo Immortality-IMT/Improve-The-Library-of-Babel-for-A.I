@@ -11,7 +11,7 @@ gcc -g -o anyname source_file.c -lsqlite3
 
 e.g.
 
-gcc -g -o babel dictionary.c -lsqlite3
+gcc -g -o babel gen_dictionary.c -lsqlite3
 
 Making a sequentially generated library of babel is as follows...
 
