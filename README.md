@@ -24,6 +24,9 @@ The improvement is to make the generation directed, adding rules to omit gibberi
 
 In general, academic research papers typically range from 3000 to 8000 words. Abstract being 300 words.
 
+            //Makes the library possible by keeping the list short        
+            if (isValidWord(result) && isValidWordWithAI(result)) {}
+
 Resumes when exited from last generated word found in database. The project aim to generate the data and utilize A.I. for processing.
 
 # Knighinggale Mason writes...
