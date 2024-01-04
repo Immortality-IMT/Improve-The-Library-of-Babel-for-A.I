@@ -38,7 +38,6 @@
     Important you must manually reset the config tabe in en_dictionary.db
     To start from the beginning again.
 */
-*/
 
 #include <stdio.h>
 #include <stdlib.h>
