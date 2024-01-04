@@ -38,10 +38,13 @@
     Important you must manually reset the config tabe in en_dictionary.db
     To start from the beginning again.
 */
+*/
 
 #include <stdio.h>
+#include <stdlib.h>
 #include <string.h>
 #include <sqlite3.h>
+#include <stdbool.h>
 
 #define MAX_RESULT_LENGTH 1024
 
@@ -91,8 +94,18 @@ void concatenateWords(const char *word1, const char *word2, char *result) {
 }
 
 // Keep the results database as short as possible by pruning
-void prune() {
+bool isValidWord(const char *word) {
+    // Implement custom validation logic here
+    // Return true if the word is valid, false otherwise
 
+    return true; // Placeholder, replace with your logic
+}
+
+bool isValidWordWithAI(const char *word) {
+    //send the word to an A.I. to decide
+    //if word should be in character set 
+
+    return true; // Placeholder, replace with your logic
 }
 
 // Make sure a value exists in config table for resume from previous state
@@ -241,13 +254,21 @@ int main() {
             // Print the result to the screen
             printf("Concatenated Word: %s\n", result);
 
-            // Insert the result into res_sentence.db
-            sqlite3_bind_text(stmtRes, 1, result, -1, SQLITE_STATIC);
-            sqlite3_bind_text(stmtRes, 2, "Concatenated definition", -1, SQLITE_STATIC);
 
-            if (sqlite3_step(stmtRes) != SQLITE_DONE) {
-                handleSQLiteError("inserting into res_sentence.db", dbRes, insertQuery);
-                goto cleanup;  // Use goto to perform cleanup before exiting
+            //Keep the list short        
+            if (isValidWord(result) && isValidWordWithAI(result)) {
+
+
+                // Insert the result into res_sentence.db
+                sqlite3_bind_text(stmtRes, 1, result, -1, SQLITE_STATIC);
+                sqlite3_bind_text(stmtRes, 2, "Concatenated definition", -1, SQLITE_STATIC);
+
+                if (sqlite3_step(stmtRes) != SQLITE_DONE) {
+                    handleSQLiteError("inserting into res_sentence.db", dbRes, insertQuery);
+                    goto cleanup;  // Use goto to perform cleanup before exiting
+                }
+
+
             }
 
             // Update the last processed entry IDs in the config table in dictionary.db
