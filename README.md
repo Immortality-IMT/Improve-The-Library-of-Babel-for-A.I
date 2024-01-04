@@ -6,7 +6,7 @@ Improve Borges Library of Babel to take into account recent advances in A.I. tha
 Compile with:<br>
 gcc -g -o anyname source_file.c -lsqlite3<br>
 gcc -g -o babel_words gen_dictionary.c -lsqlite3<br>
-gcc -g -o sentence sentence.c -lsqlite3
+gcc -g -o sentence gen_sentence.c -lsqlite3
 
 Most versions of library of babel use the random function. Here is instead sequential generation.
 
