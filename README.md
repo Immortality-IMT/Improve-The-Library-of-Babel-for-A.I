@@ -1,24 +1,25 @@
 # Improve the Library of Babel for A.I.
-Improve Borges Library of Babel to take into account recent advances in A.I. that can possibly organise the data to finally be useful.
+Improve Borges Library of Babel to take into account recent advances in A.I. that can possibly organize the data to finally be useful.
 
-These files generate the library sequentially into a database. They have two functions, one to omit data based on regular expressions and another to send the data to GPT to make decisions on the data.
+# About these files.
 
-Improving the library of babel to find cures to aging.
+Compile with:<br>
+gcc -g -o anyname source_file.c -lsqlite3<br>
+gcc -g -o babel_words gen_dictionary.c -lsqlite3<br>
+gcc -g -o sentence sentence.c -lsqlite3
 
-Compile with: 
+Most version of library of babel use the random function. Here is instead sequential generation.
 
-gcc -g -o anyname source_file.c -lsqlite3
+gen_dictionary.c - sequential generator using 26 letters of the alphabet (a..z). Generated words can be parsed later into sentences and punctuation added.
+gen_sentence.c - sequential generator using a word set (en_dictioanry.db). Minimal word set based on information preservation, primitives or language factors.
+en_dictioanary.ab.7z - minimal word set to use with gen_sentence.c
+dictionary.v2.7z - mindless generation of ever longer (a..z)
 
-e.g.
+The improvement is to make the generation directed, adding rules to omit gibberish and prune using regular expressions and using A.I. to make the decisions using the data in a prompt. E.g "Does this have any meaning in science?" Improving the library of babel to find cures to aging or find new science.
 
-gcc -g -o babel gen_dictionary.c -lsqlite3
+In general, academic research papers typically range from 3000 to 8000 words. Abstract being 300 words.
 
-Making a sequentially generated library of babel is as follows...
-
-1. Generate the dictionary of words.
-2. Generate the dictionary of single sentences.
-
-That's it, the character set must be kept to a minimum and parsers can represent data for the end user. The aim is information preservation and representation using only the minimal set of primitives. In general, academic research papers typically range from 3000 to 8000 words. Abstract being 300 words. Here the complete set of permutations are represented, being 45 letters in length using 26 characters of the alphabet. A complete set of sentences might be 8000 words long but resume feature means generate once and save the database. The project aim to generate the data and utilize AI. for processing.
+Resumes when exited from last generated word found in database. The project aim to generate the data and utilize A.I. for processing.
 
 # Knighinggale Mason writes...
 
