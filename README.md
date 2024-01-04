@@ -10,7 +10,7 @@ gcc -g -o sentence gen_sentence.c -lsqlite3
 
 Most versions of library of babel use the random function. Here is instead sequential generation.
 
-gen_sentence.c - sequential generator using a word set (en_dictioanry.db). Minimal word set based on information preservation, primitives or language factors.<br>
+gen_sentence.c - sequential generator using a word set (small_word_set_en_dictionary.db.7z). Minimal word set based on information preservation, primitives or language factors.<br>
 small_word_set_en_dictionary.db.7z - minimal word set to use with gen_sentence.c<br>
 gen_dictionary.c - sequential generator using 26 letters of the alphabet (a..z). Generated words can be parsed later into sentences and punctuation added.<br>
 dictionary.v2.7z - mindless generation of ever longer (a..z)<br>
