@@ -186,7 +186,7 @@ int main() {
     }
    
     // Prepare statements
-    const char *query1 = "SELECT id, word FROM entries WHERE id > ?;";
+    const char *query1 = "SELECT id, word FROM entries WHERE id >= ?;";
     const char *query2 = "SELECT id, word FROM entries WHERE id > ?;";
     const char *insertQuery = "INSERT INTO entries (word, wordtype, definition) VALUES (?, 'Concatenated', ?)";
 
