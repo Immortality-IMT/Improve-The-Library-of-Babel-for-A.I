@@ -8,6 +8,11 @@ gcc -g -o anyname source_file.c -lsqlite3<br>
 gcc -g -o babel_words gen_dictionary.c -lsqlite3<br>
 gcc -g -o sentence gen_sentence.c -lsqlite3
 
+sudo apt-get install libsqlite3-dev  # Debian/Ubuntu<br>
+sudo yum install sqlite-devel        # Fedora/CentOS<br>
+
+Use DB Browser for SQLite to view sqlite databases - https://sqlitebrowser.org/
+
 Most versions of library of babel use the random function. Here is instead sequential generation.
 
 - gen_sentence.c - sequential generator using a word set (small_word_set_en_dictionary.db.7z). Minimal word set based on information preservation, primitives or language factors.<br>
