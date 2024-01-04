@@ -15,7 +15,7 @@ Most versions of library of babel use the random function. Here is instead seque
 - gen_dictionary.c - sequential generator using 26 letters of the alphabet (a..z). Generated words can be parsed later into sentences and punctuation added.<br>
 - dictionary.v2.7z - mindless generation of ever longer (a..z)<br>
 
-The improvement is to make the generation directed, adding rules to omit gibberish and prune using regular expressions and using A.I. to make the decisions using the data in a prompt. E.g "Does this have any meaning in science?" Improving the library of babel to find cures to aging or find new science.
+The improvement is to make the generation directed, adding rules to omit gibberish and prune using regular expressions, using informed search algorithms and heuristic search algorithms and using A.I. to make decisions using the data in a prompt. E.g "Does this have any meaning in science?" Improving the library of babel to find cures to aging or find new science.
 
 In general, academic research papers typically range from 3000 to 8000 words. Abstract being 300 words.
 
