@@ -12,17 +12,18 @@ sudo apt-get install libsqlite3-dev  # Debian/Ubuntu<br>
 sudo yum install sqlite-devel        # Fedora/CentOS<br>
 
 Use DB Browser for SQLite to view sqlite databases - https://sqlitebrowser.org/
+Use a RAM Disk for faster generation - https://estarq.github.io/ramdisk/
 
-Most versions of library of babel use the random function. Here is instead sequential generation.
+Most versions of library of babel use the random function. Here instead is sequential generation.
 
-- gen_sentence.c - sequential generator using a word set (small_word_set_en_dictionary.db.7z). Minimal word set based on information preservation, primitives or language factors.<br>
+- gen_sentence.c - sequential generator using a word set (small_word_set_en_dictionary.db.7z). Minimal word set based where information is preserved.<br>
 - small_word_set_en_dictionary.db.7z - minimal word set to use with gen_sentence.c<br>
 - gen_dictionary.c - sequential generator using 26 letters of the alphabet (a..z). Generated words can be parsed later into sentences and punctuation added.<br>
 - dictionary.v2.7z - mindless generation of ever longer (a..z)<br>
 
-The improvement is to make the generation directed, adding rules to omit gibberish and prune using regular expressions, using informed search algorithms and heuristic search algorithms and using A.I. to make decisions using the data in a prompt. E.g "Does this have any meaning in science?" Improving the library of babel to find cures to aging or find new science. Ask GPT, I want to build a time machine that goes into the past, to attend Stephen Hawking's time traveler party. What are the steps and plans for building such a machine? It cannot push past what we know already. Theoretically, the combination of words in a library of babel would explore unknowns and such the library says: "A time telephone would use morse code."
+The improvement is to make the generation directed, adding rules to omit gibberish and prune using regular expressions, using informed search algorithms and heuristic search algorithms and using A.I. to make decisions using the data in a prompt. E.g "Does this have any meaning in science?" Theoretically, the combination of words in a library of babel would explore unknowns such as: "A time telephone would use morse code."
 
-In general, academic research papers typically range from 3000 to 8000 words. Abstract being 300 words.
+In general, academic research papers typically range from 3000 to 8000 words. Abstract being 300 words. If we could make a word set out of the all academic papers, that would do, probably throw in some science books as well. You want to prune the generation down so it always has the same amount of database entries, and then pose the results to A.I. for interesting entries. It's totally up to the A.I. to identify anything important. 
 
             //Makes the library possible by keeping the list short        
             if (isValidWord(result) && isValidWordWithAI(result)) {}
