@@ -11,7 +11,7 @@ gcc -g -o sentence gen_sentence.c -lsqlite3
 sudo apt-get install libsqlite3-dev  # Debian/Ubuntu<br>
 sudo yum install sqlite-devel        # Fedora/CentOS<br>
 
-Use DB Browser for SQLite to view sqlite databases - https://sqlitebrowser.org/
+Use DB Browser for SQLite to view sqlite databases - https://sqlitebrowser.org/<br>
 Use a RAM Disk for faster generation - https://estarq.github.io/ramdisk/
 
 Most versions of library of babel use the random function. Here instead is sequential generation.
