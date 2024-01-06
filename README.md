@@ -1,4 +1,4 @@
-# Improve the Library of Babel for A.I.
+# Improve the Library of Babel to use A.I. to verify.
 Improve Borges Library of Babel to take into account recent advances in A.I. that can possibly organize the data to finally be useful.
 
 # About these files.
