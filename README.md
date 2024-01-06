@@ -1,7 +1,7 @@
-# Improve the Library of Babel to use A.I. to verify.
+# Improve the Library of Babel to use A.I. to verify
 Improve Borges Library of Babel to take into account recent advances in A.I. that can possibly organize the data to finally be useful.
 
-# About these files.
+# About these files
 
 Compile with:<br>
 gcc -g -o anyname source_file.c -lsqlite3<br>
