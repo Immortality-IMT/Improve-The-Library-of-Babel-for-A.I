@@ -20,6 +20,7 @@ Most versions of library of babel use the random function. Here instead is seque
 - small_word_set_en_dictionary.db.7z - minimal word set to use with gen_sentence.c<br>
 - gen_dictionary.c - sequential generator using 26 letters of the alphabet (a..z). Generated words can be parsed later into sentences and punctuation added.<br>
 - dictionary.v2.7z - mindless generation of ever longer (a..z)<br>
+- theorem_searcher_math_symbols.db.7z - use a math wordlist to generate equations to send to A.I. to verify and identify theorems.
 
 The improvement is to make the generation directed, adding rules to omit gibberish and prune using regular expressions, using informed search algorithms and heuristic search algorithms and using A.I. to make decisions using the data in a prompt. E.g "Does this have any meaning in science?" Theoretically, the combination of words in a library of babel would explore unknowns such as: "A time telephone would use morse code."
 
