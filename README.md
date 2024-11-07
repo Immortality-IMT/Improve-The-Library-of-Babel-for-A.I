@@ -24,7 +24,7 @@ Most versions of library of babel use the random function. Here instead is seque
 
 The improvement is to make the generation directed, adding rules to omit gibberish and prune using regular expressions, using informed search algorithms and heuristic search algorithms and using A.I. to make decisions using the data in a prompt. E.g "Does this have any meaning in science?" Theoretically, the combination of words in a library of babel would explore unknowns such as: "A time telephone would use morse code."
 
-In general, academic research papers typically range from 3000 to 8000 words. Abstract being 300 words. If we could make a word set out of the all academic papers, that would do, probably throw in some science books as well. You want to prune the generation down so it always has the same amount of database entries, and then pose the results to A.I. for interesting entries. It's totally up to the A.I. to identify anything important. 
+In general, academic research papers typically range from 3000 to 8000 words. Abstract being 300 words. If we could make a word set out of all the academic papers, that would do, probably throw in some science books as well. You want to prune the generation down so it always has the same amount of database entries, and then prose the results to A.I. for interesting entries. It's totally up to the A.I. to identify anything important. 
 
             //Makes the library possible by keeping the list short        
             if (isValidWord(result) && isValidWordWithAI(result)) {}
