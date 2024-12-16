@@ -1,5 +1,5 @@
 # Improve the Library of Babel to use A.I. to verify
-Improve Borges Library of Babel to take into account recent advances in A.I. that can possibly organize the data to finally be useful. Brute-forcing against a verification function.
+Improve Borges Library of Babel to take into account recent advances in A.I. that can possibly organize the data to finally be useful. Brute-forcing against a verification function. Combinational explosion, crunching through search spaces.
 
 # About these files
 
